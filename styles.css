@@ -547,6 +547,19 @@ img {
     font-weight: 800;
 }
 
+.price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.envio-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #4dd27c;
+    letter-spacing: 0.02em;
+}
+
 .add-btn {
     background: var(--green);
     color: #111;

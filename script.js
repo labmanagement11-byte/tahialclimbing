@@ -4,7 +4,7 @@ const productos = [
         nombre: 'Hoodie Suesca Black',
         categoria: 'negro',
         etiqueta: 'hoodie · negro',
-        precio: 189000,
+        precio: 120000,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-red.jpeg'
@@ -14,7 +14,7 @@ const productos = [
         nombre: 'Hoodie Farallón Green',
         categoria: 'verde',
         etiqueta: 'hoodie · verde',
-        precio: 189000,
+        precio: 120000,
         descripcion: 'Versión verde de alto contraste con identidad outdoor y lectura potente del logo.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-yellow.jpeg'
@@ -24,7 +24,7 @@ const productos = [
         nombre: 'Hoodie Cumbre Dorada',
         categoria: 'amarillo',
         etiqueta: 'hoodie · amarillo',
-        precio: 189000,
+        precio: 120000,
         descripcion: 'Color insignia de la marca para máxima visibilidad y una presencia comercial potente.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-black.jpeg'
@@ -34,7 +34,7 @@ const productos = [
         nombre: 'Hoodie Magma Red',
         categoria: 'rojo',
         etiqueta: 'hoodie · rojo',
-        precio: 189000,
+        precio: 120000,
         descripcion: 'Edición roja con presencia intensa para campañas visuales y drops especiales.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-green.jpeg'
@@ -44,7 +44,8 @@ const productos = [
         nombre: 'Camiseta Suesca Black',
         categoria: 'negro',
         etiqueta: 'camiseta · negro',
-        precio: 89000,
+        precio: 85000,
+        envio: true,
         descripcion: 'Camiseta técnica negra de uso diario y entrenamiento.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-black.jpeg',
@@ -55,7 +56,8 @@ const productos = [
         nombre: 'Camiseta Farallón Green',
         categoria: 'verde',
         etiqueta: 'camiseta · verde',
-        precio: 89000,
+        precio: 85000,
+        envio: true,
         descripcion: 'Camiseta verde con identidad Tahial para muro y ciudad.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-green.jpeg',
@@ -66,7 +68,8 @@ const productos = [
         nombre: 'Camiseta Cumbre Dorada',
         categoria: 'amarillo',
         etiqueta: 'camiseta · amarillo',
-        precio: 89000,
+        precio: 85000,
+        envio: true,
         descripcion: 'Camiseta amarilla insignia de la marca con máxima visibilidad.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-yellow.jpeg',
@@ -77,7 +80,8 @@ const productos = [
         nombre: 'Camiseta Magma Red',
         categoria: 'rojo',
         etiqueta: 'camiseta · rojo',
-        precio: 89000,
+        precio: 85000,
+        envio: true,
         descripcion: 'Camiseta roja de alto impacto visual para colección deportiva.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-red.jpeg',
@@ -89,6 +93,7 @@ const productos = [
         categoria: 'negro',
         etiqueta: 'gorra · negro',
         precio: 79000,
+        envio: true,
         descripcion: 'Gorra ajustable en negro con look limpio para muro, calle y viaje.',
         tallas: ['Única'],
         imagen: 'assets/products/cap-black.jpeg'
@@ -99,6 +104,7 @@ const productos = [
         categoria: 'verde',
         etiqueta: 'gorra · verde',
         precio: 79000,
+        envio: true,
         descripcion: 'Gorra ajustable verde con identidad Tahial para días outdoor y enfoque deportivo.',
         tallas: ['Única'],
         imagen: 'assets/products/cap-green.jpeg'
@@ -109,6 +115,7 @@ const productos = [
         categoria: 'amarillo',
         etiqueta: 'gorra · amarillo',
         precio: 79000,
+        envio: true,
         descripcion: 'Gorra ajustable amarilla insignia: máxima visibilidad y presencia de marca.',
         tallas: ['Única'],
         imagen: 'assets/products/cap-yellow.jpeg'
@@ -119,6 +126,7 @@ const productos = [
         categoria: 'rojo',
         etiqueta: 'gorra · rojo',
         precio: 79000,
+        envio: true,
         descripcion: 'Gorra ajustable roja de alto impacto visual para drops y looks deportivos.',
         tallas: ['Única'],
         imagen: 'assets/products/cap-red.jpeg'
@@ -178,7 +186,10 @@ function renderProductos(categoria = 'todos') {
                     ${(producto.tallas || []).map(talla => `<span class="size-chip">${talla}</span>`).join('')}
                 </div>
                 <div class="product-footer">
-                    <span class="price">$${formatoCOP(producto.precio)}</span>
+                    <div class="price-block">
+                        <span class="price">$${formatoCOP(producto.precio)}</span>
+                        ${producto.envio ? '<span class="envio-badge">✈ envío incluido</span>' : ''}
+                    </div>
                     <button class="add-btn" data-id="${producto.id}">Agregar</button>
                 </div>
             </div>

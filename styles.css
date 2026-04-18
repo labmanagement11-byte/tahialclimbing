@@ -26,6 +26,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -134,6 +135,40 @@ img {
     display: flex;
     gap: 18px;
     align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-link {
@@ -298,6 +333,10 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+}
+
+.hero-actions .btn {
+    min-height: 48px;
 }
 
 .highlights {
@@ -483,6 +522,7 @@ img {
     padding: 9px 14px;
     font-weight: 700;
     cursor: pointer;
+    min-height: 44px;
 }
 
 .lookbook {
@@ -616,6 +656,10 @@ img {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: 1px solid rgba(243, 183, 49, 0.5);
+}
+
+.contact-form button {
+    min-height: 48px;
 }
 
 .modal {
@@ -772,22 +816,141 @@ img {
 
 @media (max-width: 760px) {
     .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
+        min-height: 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: 12px 0;
+    }
+
+    .brand-logo {
+        height: 42px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
     }
 
     .nav {
         width: 100%;
-        flex-wrap: wrap;
-        gap: 12px;
+        grid-column: 1 / -1;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .nav.is-open {
+        display: flex;
+    }
+
+    .nav-link,
+    .cart-button {
+        width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.02);
     }
 
     .hero {
         min-height: 62vh;
     }
 
+    .hero-content {
+        padding: 88px 0 52px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .hero-text {
+        font-size: 0.98rem;
+    }
+
+    .featured-edit,
+    .highlights,
+    .collection,
+    .video-showcase,
+    .lookbook,
+    .contact {
+        padding: 56px 0;
+    }
+
+    .featured-main {
+        min-height: 300px;
+    }
+
+    .featured-main img,
+    .featured-side img,
+    .product-image {
+        padding: 12px;
+    }
+
+    .product-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-btn,
+    .btn,
+    .contact-form button {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: min(560px, 96%);
+        padding: 16px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .remove-btn {
+        width: 100%;
+        min-height: 44px;
+    }
+
     .lookbook-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(1200px, 94%);
+    }
+
+    .hero-content {
+        padding: 82px 0 44px;
+    }
+
+    .section-head h2 {
+        font-size: 1.55rem;
+    }
+
+    .highlight-content,
+    .product-body,
+    .video-meta,
+    .contact-form {
+        padding: 14px;
+    }
+
+    .lightbox {
+        padding: 12px;
+    }
+
+    .lightbox-close {
+        top: 14px;
+        right: 14px;
     }
 }

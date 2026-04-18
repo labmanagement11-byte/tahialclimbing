@@ -142,6 +142,10 @@ const galleryImages = document.querySelectorAll('.js-gallery-image');
 const lightbox = document.getElementById('gallery-lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxClose = document.getElementById('lightbox-close');
+const menuToggle = document.getElementById('menu-toggle');
+const siteNav = document.getElementById('site-nav');
+const navLinks = document.querySelectorAll('.nav-link');
+const videos = document.querySelectorAll('.video-card video');
 
 function formatoCOP(valor) {
     return valor.toLocaleString('es-CO');
@@ -156,10 +160,10 @@ function renderProductos(categoria = 'todos') {
         card.className = 'product-card reveal';
         const imagenProducto = producto.imagenFallback
             ? `
-            <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='${producto.imagenFallback}'">
+            <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${producto.imagenFallback}'">
             `
             : `
-            <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}">
+            <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" decoding="async">
             `;
         card.innerHTML = `
             ${imagenProducto}
@@ -350,6 +354,38 @@ function activarEventosBase() {
     }
 }
 
+function activarMenuMovil() {
+    if (!menuToggle || !siteNav) {
+        return;
+    }
+
+    const cerrarMenu = () => {
+        siteNav.classList.remove('is-open');
+        menuToggle.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    menuToggle.addEventListener('click', () => {
+        const abierto = siteNav.classList.toggle('is-open');
+        menuToggle.classList.toggle('is-open', abierto);
+        menuToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 760) {
+                cerrarMenu();
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 760) {
+            cerrarMenu();
+        }
+    });
+}
+
 function aplicarFallbackImagenes() {
     const imagesWithFallback = document.querySelectorAll('img[data-fallback]');
     const applyFallback = (image) => {
@@ -383,12 +419,47 @@ function activarHeroSlider() {
         return;
     }
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
     let activeIndex = 0;
     setInterval(() => {
         heroSlides[activeIndex].classList.remove('active');
         activeIndex = (activeIndex + 1) % heroSlides.length;
         heroSlides[activeIndex].classList.add('active');
     }, 5200);
+}
+
+function activarVideosVisibles() {
+    if (!videos.length) {
+        return;
+    }
+
+    videos.forEach(video => {
+        video.muted = true;
+        video.playsInline = true;
+    });
+
+    if (!('IntersectionObserver' in window)) {
+        videos.forEach(video => {
+            video.play().catch(() => {});
+        });
+        return;
+    }
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.35 });
+
+    videos.forEach(video => videoObserver.observe(video));
 }
 
 function activarLightbox() {
@@ -428,10 +499,12 @@ function activarLightbox() {
 document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoLocal();
     activarEventosBase();
+    activarMenuMovil();
     activarFiltros();
     renderProductos();
     activarReveal();
     aplicarFallbackImagenes();
     activarHeroSlider();
+    activarVideosVisibles();
     activarLightbox();
 });

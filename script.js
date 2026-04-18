@@ -7,7 +7,7 @@ const productos = [
         precio: 189000,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-black.jpeg'
+        imagen: 'assets/products/hoodie-red.jpeg'
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const productos = [
         precio: 189000,
         descripcion: 'Versión verde de alto contraste con identidad outdoor y lectura potente del logo.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-green.jpeg'
+        imagen: 'assets/products/hoodie-yellow.jpeg'
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const productos = [
         precio: 189000,
         descripcion: 'Color insignia de la marca para máxima visibilidad y una presencia comercial potente.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-yellow.jpeg'
+        imagen: 'assets/products/hoodie-black.jpeg'
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const productos = [
         precio: 189000,
         descripcion: 'Edición roja con presencia intensa para campañas visuales y drops especiales.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-red.jpeg'
+        imagen: 'assets/products/hoodie-green.jpeg'
     },
     {
         id: 5,
@@ -160,7 +160,7 @@ function renderProductos(categoria = 'todos') {
 
     lista.forEach(producto => {
         const card = document.createElement('article');
-        card.className = 'product-card reveal';
+        card.className = `product-card product-${producto.categoria} reveal`;
         const imagenProducto = producto.imagenFallback
             ? `
             <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${producto.imagenFallback}'">

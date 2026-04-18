@@ -446,8 +446,13 @@ img {
 .product-image {
     height: 320px;
     object-fit: contain;
-    background: #050505;
+    background: radial-gradient(circle at center, #1d1d1d 0%, #0b0b0b 78%);
     padding: 18px;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.28));
+}
+
+.product-card.product-negro .product-image {
+    background: radial-gradient(circle at center, #313131 0%, #161616 58%, #0b0b0b 100%);
 }
 
 .highlight-card img[src*="assets/products"],

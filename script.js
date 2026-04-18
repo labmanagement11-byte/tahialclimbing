@@ -5,6 +5,7 @@ const productos = [
         categoria: 'negro',
         etiqueta: 'hoodie · negro',
         precio: 120000,
+        envio: true,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-red.jpeg'
@@ -15,6 +16,7 @@ const productos = [
         categoria: 'verde',
         etiqueta: 'hoodie · verde',
         precio: 120000,
+        envio: true,
         descripcion: 'Versión verde de alto contraste con identidad outdoor y lectura potente del logo.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-yellow.jpeg'
@@ -25,6 +27,7 @@ const productos = [
         categoria: 'amarillo',
         etiqueta: 'hoodie · amarillo',
         precio: 120000,
+        envio: true,
         descripcion: 'Color insignia de la marca para máxima visibilidad y una presencia comercial potente.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-black.jpeg'
@@ -35,6 +38,7 @@ const productos = [
         categoria: 'rojo',
         etiqueta: 'hoodie · rojo',
         precio: 120000,
+        envio: true,
         descripcion: 'Edición roja con presencia intensa para campañas visuales y drops especiales.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/hoodie-green.jpeg'
@@ -47,7 +51,7 @@ const productos = [
         precio: 85000,
         envio: true,
         descripcion: 'Camiseta técnica negra de uso diario y entrenamiento.',
-        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        tallas: ['8', '10', '12', '14', '16', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-black.jpeg',
         imagenFallback: 'assets/products/hoodie-black.jpeg'
     },
@@ -59,7 +63,7 @@ const productos = [
         precio: 85000,
         envio: true,
         descripcion: 'Camiseta verde con identidad Tahial para muro y ciudad.',
-        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        tallas: ['8', '10', '12', '14', '16', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-green.jpeg',
         imagenFallback: 'assets/products/hoodie-green.jpeg'
     },
@@ -71,7 +75,7 @@ const productos = [
         precio: 85000,
         envio: true,
         descripcion: 'Camiseta amarilla insignia de la marca con máxima visibilidad.',
-        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        tallas: ['8', '10', '12', '14', '16', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-yellow.jpeg',
         imagenFallback: 'assets/products/hoodie-yellow.jpeg'
     },
@@ -83,7 +87,7 @@ const productos = [
         precio: 85000,
         envio: true,
         descripcion: 'Camiseta roja de alto impacto visual para colección deportiva.',
-        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        tallas: ['8', '10', '12', '14', '16', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
         imagen: 'assets/products/tshirt-red.jpeg',
         imagenFallback: 'assets/products/hoodie-red.jpeg'
     },

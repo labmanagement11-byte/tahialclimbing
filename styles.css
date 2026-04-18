@@ -647,6 +647,11 @@ img {
     color: #fff;
 }
 
+.social-youtube .social-icon {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: #fff;
+}
+
 .qr-card {
     display: grid;
     gap: 18px;

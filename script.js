@@ -146,6 +146,9 @@ const menuToggle = document.getElementById('menu-toggle');
 const siteNav = document.getElementById('site-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 const videos = document.querySelectorAll('.video-card video');
+const copySiteLinkBtn = document.getElementById('copy-site-link');
+const shareSiteBtn = document.getElementById('share-site');
+const siteUrl = 'https://tahialclimbing.com/';
 
 function formatoCOP(valor) {
     return valor.toLocaleString('es-CO');
@@ -351,6 +354,42 @@ function activarEventosBase() {
             mostrarNotificacion('Mensaje enviado correctamente');
             contactForm.reset();
         });
+    }
+
+    if (copySiteLinkBtn) {
+        copySiteLinkBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(siteUrl);
+                mostrarNotificacion('Link copiado');
+            } catch {
+                mostrarNotificacion('No se pudo copiar el link');
+            }
+        });
+    }
+
+    if (shareSiteBtn) {
+        if (navigator.share) {
+            shareSiteBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Tahial Climbing',
+                        text: 'Mira la web oficial de Tahial Climbing',
+                        url: siteUrl
+                    });
+                } catch {
+                    // no-op
+                }
+            });
+        } else {
+            shareSiteBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(siteUrl);
+                    mostrarNotificacion('Link copiado para compartir');
+                } catch {
+                    mostrarNotificacion('No se pudo compartir');
+                }
+            });
+        }
     }
 }
 

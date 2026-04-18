@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahial Climbing | Escalada de Montaña Colombiana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#inicio" class="brand" aria-label="Tahial Climbing">
+                <img src="assets/logo.jpeg" alt="Tahial Climbing" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+                <span class="brand-fallback is-hidden">TAHIAL CLIMBING</span>
+            </a>
+
+            <nav class="nav">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#coleccion" class="nav-link">Colección</a>
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="#lookbook" class="nav-link">Cordillera</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <button class="cart-button" id="open-cart" aria-label="Abrir carrito">
+                    🛒 <span class="cart-count">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-slider" aria-hidden="true">
+                <img class="hero-slide active" src="assets/gallery/outdoor-cliff-1.jpeg" data-fallback="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1800&q=80" alt="Escalada en roca">
+                <img class="hero-slide" src="assets/gallery/indoor-wall-blue.jpeg" data-fallback="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1800&q=80" alt="Escalada indoor">
+                <img class="hero-slide" src="assets/gallery/outdoor-cliff-2.jpeg" data-fallback="https://images.unsplash.com/photo-1526491109672-74740652b963?auto=format&fit=crop&w=1800&q=80" alt="Montaña real">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content reveal">
+                <p class="eyebrow">TAHIAL CLIMBING · COLOMBIA</p>
+                <h1>Escalada técnica con alma de cordillera colombiana</h1>
+                <p class="hero-text">Diseñado para bloque, deportiva y montaña con identidad local, carácter fuerte y enfoque técnico.</p>
+                <div class="hero-actions">
+                    <a href="#coleccion" class="btn btn-primary">Ver colección</a>
+                    <a href="#videos" class="btn btn-ghost">Ver campaña en video</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-edit">
+            <div class="container">
+                <div class="featured-grid">
+                    <article class="featured-main reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-wall-03.jpeg" data-fallback="https://images.unsplash.com/photo-1526491109672-74740652b963?auto=format&fit=crop&w=1600&q=80" alt="Tahial en sesión técnica de muro">
+                    </article>
+                    <article class="featured-side reveal">
+                        <img class="js-gallery-image" src="assets/gallery/indoor-wall-green.jpeg" data-fallback="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80" alt="Tahial escalando en muro verde">
+                    </article>
+                    <article class="featured-side reveal">
+                        <img class="js-gallery-image" src="assets/gallery/medal-yellow-shirt.jpeg" data-fallback="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80" alt="Tahial en evento de escalada con medalla">
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <div class="container highlights-grid">
+                <article class="highlight-card reveal">
+                    <img class="js-gallery-image" src="assets/gallery/tahial-highlight-01.jpeg" alt="Tahial en competencia de escalada 01">
+                    <div class="highlight-content">
+                        <h3>Movimiento en roca</h3>
+                        <p>Prendas hechas para tracción, movilidad total y sesiones largas sobre pared real.</p>
+                    </div>
+                </article>
+                <article class="highlight-card reveal">
+                    <img class="js-gallery-image" src="assets/gallery/tahial-highlight-02.jpeg" alt="Tahial en competencia de escalada 02">
+                    <div class="highlight-content">
+                        <h3>Territorio vertical</h3>
+                        <p>Roca y montaña real para una identidad de escalada nacida en Colombia.</p>
+                    </div>
+                </article>
+                <article class="highlight-card reveal">
+                    <img class="js-gallery-image" src="assets/gallery/tahial-highlight-03.jpeg" alt="Tahial en competencia de escalada 03">
+                    <div class="highlight-content">
+                        <h3>Camisetas en todas las tallas</h3>
+                        <p>Colección oficial en negro, verde, amarillo y rojo con tallas XS, S, M, L, XL y XXL.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="collection" id="coleccion">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">COLECCIÓN OFICIAL</p>
+                    <h2>Hoodies y camisetas Tahial en 4 colores</h2>
+                    <p>Selecciona tu color y revisa la colección completa con tallas disponibles XS, S, M, L, XL y XXL.</p>
+                </div>
+
+                <div class="filters reveal">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="negro">Negro</button>
+                    <button class="filter-btn" data-filter="verde">Verde</button>
+                    <button class="filter-btn" data-filter="amarillo">Amarillo</button>
+                    <button class="filter-btn" data-filter="rojo">Rojo</button>
+                </div>
+
+                <div id="productos-grid" class="products-grid"></div>
+            </div>
+        </section>
+
+        <section class="video-showcase" id="videos">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">CAMPAÑA EN MOVIMIENTO</p>
+                    <h2>Videos promocionales de la colección</h2>
+                    <p>Contenido corto para mostrar color, presencia de marca y energía visual en formato social y promocional.</p>
+                </div>
+                <div class="video-grid">
+                    <article class="video-card reveal">
+                        <video src="assets/videos/promo-hoodie-black.mp4" autoplay muted loop controls preload="metadata"></video>
+                        <div class="video-meta">
+                            <h3>Promo Hoodie Negro</h3>
+                            <p>Presentación de color clásico con lectura premium y fondo limpio.</p>
+                        </div>
+                    </article>
+                    <article class="video-card reveal">
+                        <video src="assets/videos/promo-hoodie-green.mp4" autoplay muted loop controls preload="metadata"></video>
+                        <div class="video-meta">
+                            <h3>Promo Hoodie Verde</h3>
+                            <p>Versión de alto contraste para una línea más fresca y outdoor.</p>
+                        </div>
+                    </article>
+                    <article class="video-card reveal">
+                        <video src="assets/videos/promo-hoodie-yellow.mp4" autoplay muted loop controls preload="metadata"></video>
+                        <div class="video-meta">
+                            <h3>Promo Hoodie Amarillo</h3>
+                            <p>Drop de mayor impacto visual para campañas, reels y pauta de marca.</p>
+                        </div>
+                    </article>
+                    <article class="video-card reveal">
+                        <video src="assets/videos/promo-caps-01.mp4" autoplay muted loop controls preload="metadata"></video>
+                        <div class="video-meta">
+                            <h3>Promo Gorras 01</h3>
+                            <p>Clip promocional de gorras Tahial para contenido social y branding de colección.</p>
+                        </div>
+                    </article>
+                    <article class="video-card reveal">
+                        <video src="assets/videos/promo-caps-02.mp4" autoplay muted loop controls preload="metadata"></video>
+                        <div class="video-meta">
+                            <h3>Promo Gorras 02</h3>
+                            <p>Segundo corte de campaña para reforzar color, ajuste y presencia en escalada urbana.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="lookbook" id="lookbook">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">CORDILLERA VISUAL</p>
+                    <h2>Galería real Tahial · solo fotos oficiales</h2>
+                </div>
+                <div class="lookbook-grid">
+                    <figure class="lookbook-item tall reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-cliff-01.jpeg" alt="Tahial escalando en roca natural">
+                    </figure>
+                    <figure class="lookbook-item reveal">
+                        <img class="js-gallery-image" src="assets/gallery/indoor-wall-red.jpeg" alt="Tahial en muro rojo oficial">
+                    </figure>
+                    <figure class="lookbook-item reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-award-01.jpeg" alt="Tahial en evento con medalla">
+                    </figure>
+                    <figure class="lookbook-item reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-wall-01.jpeg" alt="Tahial en muro de entrenamiento">
+                    </figure>
+                    <figure class="lookbook-item reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-award-02.jpeg" alt="Tahial en premiación oficial">
+                    </figure>
+                    <figure class="lookbook-item wide reveal">
+                        <img class="js-gallery-image" src="assets/gallery/tahial-cliff-02.jpeg" alt="Tahial en acantilado colombiano">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contacto">
+            <div class="container contact-grid reveal">
+                <div>
+                    <p class="eyebrow">CONTACTO</p>
+                    <h2>Activa tu pedido Cordada Tahial</h2>
+                    <p>Asesoría personalizada para tallas, disponibilidad y envíos en Colombia.</p>
+                    <ul class="contact-list">
+                        <li>📞 +57 300 000 0000</li>
+                        <li>📧 hola@tahialclimbing.com</li>
+                        <li>📍 Colombia</li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo" required>
+                    <textarea rows="5" placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="carrito-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tu carrito</h3>
+                <button class="close-modal" id="close-cart" aria-label="Cerrar carrito">×</button>
+            </div>
+            <div id="carrito-items" class="cart-items">
+                <p class="empty-cart">Tu carrito está vacío.</p>
+            </div>
+            <div class="modal-footer">
+                <strong>Total: $<span id="total-precio">0</span></strong>
+                <button class="btn btn-primary" id="checkout-btn">Procesar pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">×</button>
+        <img id="lightbox-image" src="" alt="Imagen ampliada Tahial Climbing">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Tahial Climbing · Escalada técnica hecha en Colombia</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

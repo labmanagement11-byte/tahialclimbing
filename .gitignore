@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Archivos originales temporales de carga
+WhatsApp Image *.jpeg
+WhatsApp Video *.mp4
+
+# Originales fuera de assets
+/tahialclimbing logo.jpeg
+
+# Sistema
+.DS_Store
+Thumbs.db

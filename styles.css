@@ -410,7 +410,7 @@ img {
 
 .hoodie-showcase {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    grid-template-columns: minmax(0, 1fr) 220px;
     gap: 24px;
     margin-bottom: 28px;
     padding: 22px;
@@ -424,34 +424,42 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 460px;
+    min-height: 620px;
     border-radius: 24px;
     overflow: hidden;
-    background: radial-gradient(circle at center, #2c2c2c 0%, #141414 58%, #090909 100%);
+    background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hoodie-preview-image {
     width: 100%;
     height: 100%;
-    max-height: 520px;
+    max-height: 700px;
     object-fit: contain;
-    padding: 22px;
-    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.35));
+    padding: 26px;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
 }
 
 .hoodie-preview-copy {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 16px;
 }
 
-.hoodie-preview-copy h3 {
+.hoodie-preview-info h3 {
     font-size: clamp(1.4rem, 2.6vw, 2rem);
     margin-bottom: 10px;
 }
 
 .hoodie-preview-copy p {
     color: var(--muted);
+}
+
+.hoodie-preview-info {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 16px;
 }
 
 .hoodie-preview-meta {
@@ -464,16 +472,16 @@ img {
 
 .hoodie-color-selector {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
 
 .hoodie-color-btn {
     min-height: 46px;
-    padding: 10px;
-    border-radius: 18px;
+    padding: 8px;
+    border-radius: 16px;
     border: 1px solid var(--line);
-    background: var(--surface-2);
+    background: #141414;
     color: var(--text);
     font-weight: 700;
     cursor: pointer;
@@ -488,21 +496,22 @@ img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
-    border-radius: 14px;
-    background: radial-gradient(circle at center, #292929 0%, #111 70%, #090909 100%);
-    padding: 8px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffffff, #efefef);
+    padding: 6px;
 }
 
 .hoodie-color-btn.active,
 .hoodie-color-btn:hover {
     border-color: var(--yellow);
     color: var(--yellow);
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(1.01);
     background: rgba(243, 183, 49, 0.08);
+    box-shadow: 0 0 0 2px rgba(243, 183, 49, 0.14);
 }
 
 .hoodie-preview-note {
-    margin-top: 14px;
+    margin-top: 12px;
     font-size: 0.9rem;
 }
 
@@ -1217,7 +1226,7 @@ img {
     }
 
     .hoodie-preview-frame {
-        min-height: 320px;
+        min-height: 360px;
     }
 
     .product-footer {

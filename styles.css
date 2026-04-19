@@ -476,7 +476,8 @@ img {
     gap: 10px;
 }
 
-.hoodie-color-btn {
+.hoodie-color-btn,
+.cap-color-btn {
     min-height: 46px;
     padding: 8px;
     border-radius: 16px;
@@ -502,7 +503,9 @@ img {
 }
 
 .hoodie-color-btn.active,
-.hoodie-color-btn:hover {
+.hoodie-color-btn:hover,
+.cap-color-btn.active,
+.cap-color-btn:hover {
     border-color: var(--yellow);
     color: var(--yellow);
     transform: translateY(-1px) scale(1.01);
@@ -894,6 +897,12 @@ img {
 
 .lookbook-item:hover img {
     transform: scale(1.04);
+}
+
+.lookbook-item img[src*="tahial-tees-lineup"],
+.lookbook-item img[src*="hoodie-yellow-medal"],
+.lookbook-item img[src*="medal-yellow-shirt"] {
+    object-position: center top;
 }
 
 .js-gallery-image {
@@ -1296,7 +1305,8 @@ img {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hoodie-color-btn {
+    .hoodie-color-btn,
+    .cap-color-btn {
         width: 100%;
     }
 

@@ -44,6 +44,72 @@ const productos = [
         imagen: 'assets/gallery/tahial-hoodie-red.jpeg'
     },
     {
+        id: 13,
+        nombre: 'Hoodie Cielo Azul',
+        categoria: 'azul',
+        etiqueta: 'hoodie · azul',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Hoodie azul royal con presencia sólida y energía de expedición.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-blue.jpeg'
+    },
+    {
+        id: 14,
+        nombre: 'Hoodie Vertiente Naranja',
+        categoria: 'naranja',
+        etiqueta: 'hoodie · naranja',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Naranja de alto impacto para máxima visibilidad en roca y ciudad.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-orange.jpeg'
+    },
+    {
+        id: 15,
+        nombre: 'Hoodie Cóndor Morado',
+        categoria: 'morado',
+        etiqueta: 'hoodie · morado',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Morado profundo con carácter y presencia de marca única.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-purple.jpeg'
+    },
+    {
+        id: 16,
+        nombre: 'Hoodie Flor Rosado',
+        categoria: 'rosado',
+        etiqueta: 'hoodie · rosado',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Rosado vibrante con personalidad fuerte para escalar con estilo.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-pink.jpeg'
+    },
+    {
+        id: 17,
+        nombre: 'Hoodie Roca Gris',
+        categoria: 'gris',
+        etiqueta: 'hoodie · gris',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Gris clásico y versátil para cualquier terreno y cualquier look.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-gray.jpeg'
+    },
+    {
+        id: 18,
+        nombre: 'Hoodie Nieve Blanco',
+        categoria: 'blanco',
+        etiqueta: 'hoodie · blanco',
+        precio: 120000,
+        envio: true,
+        descripcion: 'Blanco limpio con máxima lectura del logo Tahial Climbing.',
+        tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        imagen: 'assets/gallery/tahial-hoodie-white.jpeg'
+    },
+    {
         id: 5,
         nombre: 'Camiseta Suesca Black',
         categoria: 'negro',
@@ -93,14 +159,14 @@ const productos = [
     },
     {
         id: 9,
-        nombre: 'Gorra Suesca Black',
-        categoria: 'negro',
-        etiqueta: 'gorra · negro',
+        nombre: 'Gorra Arena Beige',
+        categoria: 'beige',
+        etiqueta: 'gorra · beige',
         precio: 79000,
         envio: true,
-        descripcion: 'Gorra ajustable en negro con look limpio para muro, calle y viaje.',
+        descripcion: 'Gorra beige con tono neutro y elegancia outdoor para cualquier ocasión.',
         tallas: ['Única'],
-        imagen: ''
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.54 PM.jpeg'
     },
     {
         id: 10,
@@ -111,7 +177,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable verde con identidad Tahial para días outdoor y enfoque deportivo.',
         tallas: ['Única'],
-        imagen: ''
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.53 PM (2) - Copy.jpeg'
     },
     {
         id: 11,
@@ -122,10 +188,76 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable amarilla insignia: máxima visibilidad y presencia de marca.',
         tallas: ['Única'],
-        imagen: ''
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.55 PM - Copy.jpeg'
     },
     {
         id: 12,
+        nombre: 'Gorra Cielo Azul',
+        categoria: 'azul',
+        etiqueta: 'gorra · azul',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra azul royal con presencia fuerte y energía de expedición.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.56 PM - Copy.jpeg'
+    },
+    {
+        id: 25,
+        nombre: 'Gorra Cóndor Morado',
+        categoria: 'morado',
+        etiqueta: 'gorra · morado',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra morada con carácter y presencia de marca única.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.57 PM.jpeg'
+    },
+    {
+        id: 26,
+        nombre: 'Gorra Flor Rosado',
+        categoria: 'rosado',
+        etiqueta: 'gorra · rosado',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra rosada vibrante con personalidad fuerte para escalar con estilo.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.58 PM.jpeg'
+    },
+    {
+        id: 27,
+        nombre: 'Gorra Roca Gris',
+        categoria: 'gris',
+        etiqueta: 'gorra · gris',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra gris clásica y versátil para cualquier terreno y cualquier look.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.48.01 PM (1) - Copy.jpeg'
+    },
+    {
+        id: 28,
+        nombre: 'Gorra Nieve Blanco',
+        categoria: 'blanco',
+        etiqueta: 'gorra · blanco',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra blanca limpia con máxima lectura del logo Tahial Climbing.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.48.01 PM.jpeg'
+    },
+    {
+        id: 29,
+        nombre: 'Gorra Suesca Black',
+        categoria: 'negro',
+        etiqueta: 'gorra · negro',
+        precio: 79000,
+        envio: true,
+        descripcion: 'Gorra ajustable en negro con look limpio para muro, calle y viaje.',
+        tallas: ['Única'],
+        imagen: 'WhatsApp Image 2026-04-19 at 3.48.02 PM.jpeg'
+    },
+    {
+        id: 30,
         nombre: 'Gorra Magma Red',
         categoria: 'rojo',
         etiqueta: 'gorra · rojo',
@@ -133,7 +265,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable roja de alto impacto visual para drops y looks deportivos.',
         tallas: ['Única'],
-        imagen: ''
+        imagen: 'WhatsApp Image 2026-04-19 at 3.47.53 PM (1) - Copy.jpeg'
     }
 ];
 
@@ -166,6 +298,11 @@ const hoodiePreviewTitle = document.getElementById('hoodie-preview-title');
 const hoodiePreviewDesc = document.getElementById('hoodie-preview-desc');
 const hoodiePreviewPrice = document.getElementById('hoodie-preview-price');
 const hoodieColorButtons = document.querySelectorAll('.hoodie-color-btn');
+const capPreviewImage = document.getElementById('cap-preview-image');
+const capPreviewTitle = document.getElementById('cap-preview-title');
+const capPreviewDesc = document.getElementById('cap-preview-desc');
+const capPreviewPrice = document.getElementById('cap-preview-price');
+const capColorButtons = document.querySelectorAll('.cap-color-btn');
 
 function formatoCOP(valor) {
     return valor.toLocaleString('es-CO');
@@ -206,6 +343,42 @@ function activarPreviewHoodie() {
 
             filtros.forEach(item => item.classList.toggle('active', item.dataset.filter === color));
             renderProductos(color);
+        });
+    });
+}
+
+function obtenerGorraPorColor(color) {
+    return productos.find(item => item.etiqueta?.includes('gorra') && item.categoria === color);
+}
+
+function actualizarPreviewCap(color = 'beige') {
+    const gorra = obtenerGorraPorColor(color) || obtenerGorraPorColor('beige');
+
+    if (!gorra || !capPreviewImage) {
+        return;
+    }
+
+    capPreviewImage.src = gorra.imagen;
+    capPreviewImage.alt = `${gorra.nombre} · Tahial Climbing`;
+
+    if (capPreviewTitle) capPreviewTitle.textContent = gorra.nombre;
+    if (capPreviewDesc) capPreviewDesc.textContent = gorra.descripcion;
+    if (capPreviewPrice) capPreviewPrice.textContent = `$${formatoCOP(gorra.precio)}`;
+
+    capColorButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.capColor === gorra.categoria);
+    });
+}
+
+function activarPreviewCap() {
+    if (!capColorButtons.length) {
+        return;
+    }
+
+    capColorButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const color = btn.dataset.capColor;
+            actualizarPreviewCap(color);
         });
     });
 }
@@ -609,8 +782,10 @@ document.addEventListener('DOMContentLoaded', () => {
     activarMenuMovil();
     activarFiltros();
     activarPreviewHoodie();
+    activarPreviewCap();
     renderProductos();
     actualizarPreviewHoodie('negro');
+    actualizarPreviewCap('negro');
     activarReveal();
     aplicarFallbackImagenes();
     activarHeroSlider();

@@ -8,7 +8,8 @@ const productos = [
         envio: true,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-red.jpeg'
+        imagen: 'assets/gallery/tahial-hoodie-black.jpeg',
+        imagenFallback: 'assets/products/hoodie-red.jpeg'
     },
     {
         id: 2,

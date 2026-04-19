@@ -101,7 +101,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable en negro con look limpio para muro, calle y viaje.',
         tallas: ['Única'],
-        imagen: 'assets/products/cap-black.jpeg'
+        imagen: ''
     },
     {
         id: 10,
@@ -112,7 +112,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable verde con identidad Tahial para días outdoor y enfoque deportivo.',
         tallas: ['Única'],
-        imagen: 'assets/products/cap-green.jpeg'
+        imagen: ''
     },
     {
         id: 11,
@@ -123,7 +123,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable amarilla insignia: máxima visibilidad y presencia de marca.',
         tallas: ['Única'],
-        imagen: 'assets/products/cap-yellow.jpeg'
+        imagen: ''
     },
     {
         id: 12,
@@ -134,7 +134,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable roja de alto impacto visual para drops y looks deportivos.',
         tallas: ['Única'],
-        imagen: 'assets/products/cap-red.jpeg'
+        imagen: ''
     }
 ];
 
@@ -174,7 +174,13 @@ function renderProductos(categoria = 'todos') {
     lista.forEach(producto => {
         const card = document.createElement('article');
         card.className = `product-card product-${producto.categoria} reveal`;
-        const imagenProducto = producto.imagenFallback
+        const imagenProducto = !producto.imagen
+            ? `
+            <div class="product-image product-image-placeholder" aria-label="Imagen en actualización">
+                <span>Imagen en actualización</span>
+            </div>
+            `
+            : producto.imagenFallback
             ? `
             <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${producto.imagenFallback}'">
             `

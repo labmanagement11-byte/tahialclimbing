@@ -8,8 +8,7 @@ const productos = [
         envio: true,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/gallery/tahial-hoodie-black.jpeg',
-        imagenFallback: 'assets/products/hoodie-red.jpeg'
+        imagen: ''
     },
     {
         id: 2,
@@ -20,7 +19,7 @@ const productos = [
         envio: true,
         descripcion: 'Versión verde de alto contraste con identidad outdoor y lectura potente del logo.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-yellow.jpeg'
+        imagen: ''
     },
     {
         id: 3,
@@ -31,7 +30,7 @@ const productos = [
         envio: true,
         descripcion: 'Color insignia de la marca para máxima visibilidad y una presencia comercial potente.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-black.jpeg'
+        imagen: ''
     },
     {
         id: 4,
@@ -42,7 +41,7 @@ const productos = [
         envio: true,
         descripcion: 'Edición roja con presencia intensa para campañas visuales y drops especiales.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: 'assets/products/hoodie-green.jpeg'
+        imagen: ''
     },
     {
         id: 5,

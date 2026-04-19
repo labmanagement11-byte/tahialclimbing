@@ -297,12 +297,32 @@ const hoodiePreviewImage = document.getElementById('hoodie-preview-image');
 const hoodiePreviewTitle = document.getElementById('hoodie-preview-title');
 const hoodiePreviewDesc = document.getElementById('hoodie-preview-desc');
 const hoodiePreviewPrice = document.getElementById('hoodie-preview-price');
+const hoodieSelectedColor = document.getElementById('hoodie-selected-color');
+const hoodieSizeSelect = document.getElementById('hoodie-size-select');
+const hoodieAddBtn = document.getElementById('hoodie-add-btn');
 const hoodieColorButtons = document.querySelectorAll('.hoodie-color-btn');
+const tshirtPreviewImage = document.getElementById('tshirt-preview-image');
+const tshirtPreviewTitle = document.getElementById('tshirt-preview-title');
+const tshirtPreviewDesc = document.getElementById('tshirt-preview-desc');
+const tshirtPreviewPrice = document.getElementById('tshirt-preview-price');
+const tshirtSelectedColor = document.getElementById('tshirt-selected-color');
+const tshirtSizeSelect = document.getElementById('tshirt-size-select');
+const tshirtAddBtn = document.getElementById('tshirt-add-btn');
+const tshirtColorButtons = document.querySelectorAll('.tshirt-color-btn');
 const capPreviewImage = document.getElementById('cap-preview-image');
 const capPreviewTitle = document.getElementById('cap-preview-title');
 const capPreviewDesc = document.getElementById('cap-preview-desc');
 const capPreviewPrice = document.getElementById('cap-preview-price');
+const capSelectedColor = document.getElementById('cap-selected-color');
+const capSizeSelect = document.getElementById('cap-size-select');
+const capAddBtn = document.getElementById('cap-add-btn');
 const capColorButtons = document.querySelectorAll('.cap-color-btn');
+
+const seleccionActual = {
+    hoodie: 'negro',
+    tshirt: 'negro',
+    cap: 'beige'
+};
 
 function formatoCOP(valor) {
     return valor.toLocaleString('es-CO');
@@ -310,6 +330,23 @@ function formatoCOP(valor) {
 
 function obtenerHoodiePorColor(color) {
     return productos.find(item => item.etiqueta?.includes('hoodie') && item.categoria === color);
+}
+
+function obtenerCamisetaPorColor(color) {
+    return productos.find(item => item.etiqueta?.includes('camiseta') && item.categoria === color);
+}
+
+function capitalizar(valor = '') {
+    return valor.charAt(0).toUpperCase() + valor.slice(1);
+}
+
+function poblarSelectorTallas(select, producto) {
+    if (!select || !producto) {
+        return;
+    }
+
+    const tallas = producto.tallas || [];
+    select.innerHTML = tallas.map(talla => `<option value="${talla}">${talla}</option>`).join('');
 }
 
 function actualizarPreviewHoodie(color = 'negro') {
@@ -325,6 +362,9 @@ function actualizarPreviewHoodie(color = 'negro') {
     if (hoodiePreviewTitle) hoodiePreviewTitle.textContent = hoodie.nombre;
     if (hoodiePreviewDesc) hoodiePreviewDesc.textContent = hoodie.descripcion;
     if (hoodiePreviewPrice) hoodiePreviewPrice.textContent = `$${formatoCOP(hoodie.precio)}`;
+    if (hoodieSelectedColor) hoodieSelectedColor.textContent = capitalizar(hoodie.categoria);
+    poblarSelectorTallas(hoodieSizeSelect, hoodie);
+    seleccionActual.hoodie = hoodie.categoria;
 
     hoodieColorButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.hoodieColor === hoodie.categoria);
@@ -340,9 +380,41 @@ function activarPreviewHoodie() {
         btn.addEventListener('click', () => {
             const color = btn.dataset.hoodieColor;
             actualizarPreviewHoodie(color);
+        });
+    });
+}
 
-            filtros.forEach(item => item.classList.toggle('active', item.dataset.filter === color));
-            renderProductos(color);
+function actualizarPreviewTshirt(color = 'negro') {
+    const camiseta = obtenerCamisetaPorColor(color) || obtenerCamisetaPorColor('negro');
+
+    if (!camiseta || !tshirtPreviewImage) {
+        return;
+    }
+
+    tshirtPreviewImage.src = camiseta.imagen;
+    tshirtPreviewImage.alt = `${camiseta.nombre} · Tahial Climbing`;
+
+    if (tshirtPreviewTitle) tshirtPreviewTitle.textContent = camiseta.nombre;
+    if (tshirtPreviewDesc) tshirtPreviewDesc.textContent = camiseta.descripcion;
+    if (tshirtPreviewPrice) tshirtPreviewPrice.textContent = `$${formatoCOP(camiseta.precio)}`;
+    if (tshirtSelectedColor) tshirtSelectedColor.textContent = capitalizar(camiseta.categoria);
+    poblarSelectorTallas(tshirtSizeSelect, camiseta);
+    seleccionActual.tshirt = camiseta.categoria;
+
+    tshirtColorButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tshirtColor === camiseta.categoria);
+    });
+}
+
+function activarPreviewTshirt() {
+    if (!tshirtColorButtons.length) {
+        return;
+    }
+
+    tshirtColorButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const color = btn.dataset.tshirtColor;
+            actualizarPreviewTshirt(color);
         });
     });
 }
@@ -364,6 +436,9 @@ function actualizarPreviewCap(color = 'beige') {
     if (capPreviewTitle) capPreviewTitle.textContent = gorra.nombre;
     if (capPreviewDesc) capPreviewDesc.textContent = gorra.descripcion;
     if (capPreviewPrice) capPreviewPrice.textContent = `$${formatoCOP(gorra.precio)}`;
+    if (capSelectedColor) capSelectedColor.textContent = capitalizar(gorra.categoria);
+    poblarSelectorTallas(capSizeSelect, gorra);
+    seleccionActual.cap = gorra.categoria;
 
     capColorButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.capColor === gorra.categoria);
@@ -384,6 +459,10 @@ function activarPreviewCap() {
 }
 
 function renderProductos(categoria = 'todos') {
+    if (!productosGrid) {
+        return;
+    }
+
     productosGrid.innerHTML = '';
     const lista = categoria === 'todos' ? productos : productos.filter(item => item.categoria === categoria);
 
@@ -435,17 +514,18 @@ function renderProductos(categoria = 'todos') {
     activarReveal();
 }
 
-function agregarAlCarrito(id) {
+function agregarAlCarrito(id, tallaSeleccionada) {
     const producto = productos.find(item => item.id === id);
     if (!producto) {
         return;
     }
 
-    const existente = carrito.find(item => item.id === id);
+    const tallaFinal = tallaSeleccionada || producto.tallas?.[0] || 'Única';
+    const existente = carrito.find(item => item.id === id && item.tallaSeleccionada === tallaFinal);
     if (existente) {
         existente.cantidad += 1;
     } else {
-        carrito.push({ ...producto, cantidad: 1 });
+        carrito.push({ ...producto, tallaSeleccionada: tallaFinal, cantidad: 1 });
     }
 
     actualizarCarrito();
@@ -468,6 +548,7 @@ function renderCarrito() {
         <div class="cart-item">
             <div>
                 <strong>${item.nombre}</strong>
+                <p>Talla: ${item.tallaSeleccionada || 'Única'}</p>
                 <p>Cantidad: ${item.cantidad}</p>
                 <p>$${formatoCOP(item.precio * item.cantidad)}</p>
             </div>
@@ -510,6 +591,38 @@ function activarFiltros() {
             renderProductos(btn.dataset.filter);
         });
     });
+}
+
+function activarCompraDirecta() {
+    if (hoodieAddBtn) {
+        hoodieAddBtn.addEventListener('click', () => {
+            const hoodie = obtenerHoodiePorColor(seleccionActual.hoodie);
+            if (!hoodie) {
+                return;
+            }
+            agregarAlCarrito(hoodie.id, hoodieSizeSelect?.value);
+        });
+    }
+
+    if (tshirtAddBtn) {
+        tshirtAddBtn.addEventListener('click', () => {
+            const camiseta = obtenerCamisetaPorColor(seleccionActual.tshirt);
+            if (!camiseta) {
+                return;
+            }
+            agregarAlCarrito(camiseta.id, tshirtSizeSelect?.value);
+        });
+    }
+
+    if (capAddBtn) {
+        capAddBtn.addEventListener('click', () => {
+            const gorra = obtenerGorraPorColor(seleccionActual.cap);
+            if (!gorra) {
+                return;
+            }
+            agregarAlCarrito(gorra.id, capSizeSelect?.value);
+        });
+    }
 }
 
 function activarReveal() {
@@ -782,10 +895,12 @@ document.addEventListener('DOMContentLoaded', () => {
     activarMenuMovil();
     activarFiltros();
     activarPreviewHoodie();
+    activarPreviewTshirt();
     activarPreviewCap();
-    renderProductos();
+    activarCompraDirecta();
     actualizarPreviewHoodie('negro');
-    actualizarPreviewCap('negro');
+    actualizarPreviewTshirt('negro');
+    actualizarPreviewCap('beige');
     activarReveal();
     aplicarFallbackImagenes();
     activarHeroSlider();

@@ -87,7 +87,7 @@
                 <div class="section-head reveal">
                     <p class="eyebrow">COLECCIÓN OFICIAL</p>
                     <h2>Colección oficial Tahialclimbing</h2>
-                    <p>Selecciona tu color y revisa la colección completa. En camisetas también hay tallas de niño 8, 10, 12, 14 y 16.</p>
+                    <p>Selecciona la prenda, el color y la talla desde cada bloque. Agrega al carrito directamente sin bajar a una lista aparte.</p>
                 </div>
 
                 <div class="hoodie-showcase reveal" id="hoodie-showcase">
@@ -145,56 +145,104 @@
                                 <span class="price" id="hoodie-preview-price">$120.000</span>
                                 <span class="envio-badge">✈ envío incluido</span>
                             </div>
+                            <div class="purchase-panel">
+                                <p class="purchase-color">Color seleccionado: <strong id="hoodie-selected-color">Negro</strong></p>
+                                <label class="purchase-label" for="hoodie-size-select">Talla</label>
+                                <select id="hoodie-size-select" class="purchase-select" aria-label="Seleccionar talla del hoodie"></select>
+                                <button class="add-btn purchase-btn" id="hoodie-add-btn" type="button">Agregar hoodie al carrito</button>
+                            </div>
                             <p class="hoodie-preview-note">Haz click en una miniatura para cambiar el color del buso principal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hoodie-showcase reveal" id="tshirt-showcase">
+                    <div class="hoodie-preview-frame">
+                        <img id="tshirt-preview-image" class="hoodie-preview-image" src="assets/products/tshirt-black.jpeg" alt="Camiseta Tahial color negro">
+                    </div>
+                    <div class="hoodie-preview-copy">
+                        <p class="eyebrow">ESCOGE EL COLOR DE CAMISETA</p>
+                        <div class="hoodie-color-selector" aria-label="Seleccionar color de la camiseta">
+                            <button class="tshirt-color-btn active" type="button" data-tshirt-color="negro" aria-label="Ver camiseta negra">
+                                <img src="assets/products/tshirt-black.jpeg" alt="" class="hoodie-color-thumb">
+                                <span>Negro</span>
+                            </button>
+                            <button class="tshirt-color-btn" type="button" data-tshirt-color="verde" aria-label="Ver camiseta verde">
+                                <img src="assets/products/tshirt-green.jpeg" alt="" class="hoodie-color-thumb">
+                                <span>Verde</span>
+                            </button>
+                            <button class="tshirt-color-btn" type="button" data-tshirt-color="amarillo" aria-label="Ver camiseta amarilla">
+                                <img src="assets/products/tshirt-yellow.jpeg" alt="" class="hoodie-color-thumb">
+                                <span>Amarillo</span>
+                            </button>
+                            <button class="tshirt-color-btn" type="button" data-tshirt-color="rojo" aria-label="Ver camiseta roja">
+                                <img src="assets/products/tshirt-red.jpeg" alt="" class="hoodie-color-thumb">
+                                <span>Rojo</span>
+                            </button>
+                        </div>
+                        <div class="hoodie-preview-info">
+                            <h3 id="tshirt-preview-title">Camiseta Suesca Black</h3>
+                            <p id="tshirt-preview-desc">Camiseta técnica negra de uso diario y entrenamiento.</p>
+                            <div class="hoodie-preview-meta">
+                                <span class="price" id="tshirt-preview-price">$85.000</span>
+                                <span class="envio-badge">✈ envío incluido</span>
+                            </div>
+                            <div class="purchase-panel">
+                                <p class="purchase-color">Color seleccionado: <strong id="tshirt-selected-color">Negro</strong></p>
+                                <label class="purchase-label" for="tshirt-size-select">Talla</label>
+                                <select id="tshirt-size-select" class="purchase-select" aria-label="Seleccionar talla de la camiseta"></select>
+                                <button class="add-btn purchase-btn" id="tshirt-add-btn" type="button">Agregar camiseta al carrito</button>
+                            </div>
+                            <p class="hoodie-preview-note">Escoge el color y la talla de la camiseta para agregarla desde aqui.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="hoodie-showcase reveal" id="cap-showcase">
                     <div class="hoodie-preview-frame">
-                            <img id="cap-preview-image" class="hoodie-preview-image" src="assets/caps/cap-beige.jpeg" alt="Gorra Tahial color beige">
+                        <img id="cap-preview-image" class="hoodie-preview-image" src="assets/caps/cap-beige.jpeg" alt="Gorra Tahial color beige">
                     </div>
                     <div class="hoodie-preview-copy">
                         <p class="eyebrow">ESCOGE EL COLOR DE GORRA</p>
                         <div class="hoodie-color-selector" aria-label="Seleccionar color de gorra">
                             <button class="cap-color-btn active" type="button" data-cap-color="beige" aria-label="Ver gorra beige">
-                                    <img src="assets/caps/cap-beige.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-beige.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Beige</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="verde" aria-label="Ver gorra verde">
-                                    <img src="assets/caps/cap-green.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-green.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Verde</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="amarillo" aria-label="Ver gorra amarilla">
-                                    <img src="assets/caps/cap-yellow.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-yellow.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Amarillo</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="azul" aria-label="Ver gorra azul">
-                                    <img src="assets/caps/cap-blue.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-blue.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Azul</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="morado" aria-label="Ver gorra morada">
-                                    <img src="assets/caps/cap-purple.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-purple.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Morado</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="rosado" aria-label="Ver gorra rosada">
-                                    <img src="assets/caps/cap-pink.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-pink.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Rosado</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="gris" aria-label="Ver gorra gris">
-                                    <img src="assets/caps/cap-gray.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-gray.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Gris</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="blanco" aria-label="Ver gorra blanca">
-                                    <img src="assets/caps/cap-white.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-white.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Blanco</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="negro" aria-label="Ver gorra negra">
-                                    <img src="assets/caps/cap-black.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-black.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Negro</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="rojo" aria-label="Ver gorra roja">
-                                    <img src="assets/caps/cap-red.jpeg" alt="" class="hoodie-color-thumb">
+                                <img src="assets/caps/cap-red.jpeg" alt="" class="hoodie-color-thumb">
                                 <span>Rojo</span>
                             </button>
                         </div>
@@ -205,20 +253,16 @@
                                 <span class="price" id="cap-preview-price">$79.000</span>
                                 <span class="envio-badge">✈ envío incluido</span>
                             </div>
+                            <div class="purchase-panel">
+                                <p class="purchase-color">Color seleccionado: <strong id="cap-selected-color">Beige</strong></p>
+                                <label class="purchase-label" for="cap-size-select">Talla</label>
+                                <select id="cap-size-select" class="purchase-select" aria-label="Seleccionar talla de la gorra"></select>
+                                <button class="add-btn purchase-btn" id="cap-add-btn" type="button">Agregar gorra al carrito</button>
+                            </div>
                             <p class="hoodie-preview-note">Haz click en una miniatura para cambiar el color de la gorra.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="filters reveal">
-                    <button class="filter-btn active" data-filter="todos">Todos</button>
-                    <button class="filter-btn" data-filter="negro">Negro</button>
-                    <button class="filter-btn" data-filter="verde">Verde</button>
-                    <button class="filter-btn" data-filter="amarillo">Amarillo</button>
-                    <button class="filter-btn" data-filter="rojo">Rojo</button>
-                </div>
-
-                <div id="productos-grid" class="products-grid"></div>
             </div>
         </section>
 

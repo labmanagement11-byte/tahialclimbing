@@ -477,7 +477,8 @@ img {
 }
 
 .hoodie-color-btn,
-.cap-color-btn {
+.cap-color-btn,
+.tshirt-color-btn {
     min-height: 46px;
     padding: 8px;
     border-radius: 16px;
@@ -505,12 +506,57 @@ img {
 .hoodie-color-btn.active,
 .hoodie-color-btn:hover,
 .cap-color-btn.active,
-.cap-color-btn:hover {
+.cap-color-btn:hover,
+.tshirt-color-btn.active,
+.tshirt-color-btn:hover {
     border-color: var(--yellow);
     color: var(--yellow);
     transform: translateY(-1px) scale(1.01);
     background: rgba(243, 183, 49, 0.08);
     box-shadow: 0 0 0 2px rgba(243, 183, 49, 0.14);
+}
+
+.purchase-panel {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.purchase-color {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.purchase-color strong {
+    color: var(--yellow);
+}
+
+.purchase-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.purchase-select {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #0f0f0f;
+    color: var(--text);
+    padding: 0 14px;
+    font: inherit;
+}
+
+.purchase-select:focus {
+    outline: 2px solid rgba(243, 183, 49, 0.28);
+    border-color: var(--yellow);
+}
+
+.purchase-btn {
+    width: 100%;
 }
 
 .hoodie-preview-note {
@@ -1306,7 +1352,8 @@ img {
     }
 
     .hoodie-color-btn,
-    .cap-color-btn {
+    .cap-color-btn,
+    .tshirt-color-btn {
         width: 100%;
     }
 

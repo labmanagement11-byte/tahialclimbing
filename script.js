@@ -8,7 +8,7 @@ const productos = [
         envio: true,
         descripcion: 'Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: ''
+        imagen: 'assets/gallery/tahial-hoodie-black.jpeg'
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const productos = [
         envio: true,
         descripcion: 'Versión verde de alto contraste con identidad outdoor y lectura potente del logo.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: ''
+        imagen: 'assets/gallery/tahial-hoodie-green.jpeg'
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const productos = [
         envio: true,
         descripcion: 'Color insignia de la marca para máxima visibilidad y una presencia comercial potente.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: ''
+        imagen: 'assets/gallery/tahial-hoodie-yellow.jpeg'
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const productos = [
         envio: true,
         descripcion: 'Edición roja con presencia intensa para campañas visuales y drops especiales.',
         tallas: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-        imagen: ''
+        imagen: 'assets/gallery/tahial-hoodie-red.jpeg'
     },
     {
         id: 5,
@@ -161,9 +161,53 @@ const videos = document.querySelectorAll('.video-card video');
 const copySiteLinkBtn = document.getElementById('copy-site-link');
 const shareSiteBtn = document.getElementById('share-site');
 const siteUrl = 'https://tahialclimbing.com/';
+const hoodiePreviewImage = document.getElementById('hoodie-preview-image');
+const hoodiePreviewTitle = document.getElementById('hoodie-preview-title');
+const hoodiePreviewDesc = document.getElementById('hoodie-preview-desc');
+const hoodiePreviewPrice = document.getElementById('hoodie-preview-price');
+const hoodieColorButtons = document.querySelectorAll('.hoodie-color-btn');
 
 function formatoCOP(valor) {
     return valor.toLocaleString('es-CO');
+}
+
+function obtenerHoodiePorColor(color) {
+    return productos.find(item => item.etiqueta?.includes('hoodie') && item.categoria === color);
+}
+
+function actualizarPreviewHoodie(color = 'negro') {
+    const hoodie = obtenerHoodiePorColor(color) || obtenerHoodiePorColor('negro');
+
+    if (!hoodie || !hoodiePreviewImage) {
+        return;
+    }
+
+    hoodiePreviewImage.src = hoodie.imagen;
+    hoodiePreviewImage.alt = `${hoodie.nombre} · Tahial Climbing`;
+
+    if (hoodiePreviewTitle) hoodiePreviewTitle.textContent = hoodie.nombre;
+    if (hoodiePreviewDesc) hoodiePreviewDesc.textContent = hoodie.descripcion;
+    if (hoodiePreviewPrice) hoodiePreviewPrice.textContent = `$${formatoCOP(hoodie.precio)}`;
+
+    hoodieColorButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.hoodieColor === hoodie.categoria);
+    });
+}
+
+function activarPreviewHoodie() {
+    if (!hoodieColorButtons.length) {
+        return;
+    }
+
+    hoodieColorButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const color = btn.dataset.hoodieColor;
+            actualizarPreviewHoodie(color);
+
+            filtros.forEach(item => item.classList.toggle('active', item.dataset.filter === color));
+            renderProductos(color);
+        });
+    });
 }
 
 function renderProductos(categoria = 'todos') {
@@ -287,6 +331,9 @@ function activarFiltros() {
         btn.addEventListener('click', () => {
             filtros.forEach(item => item.classList.remove('active'));
             btn.classList.add('active');
+            if (btn.dataset.filter !== 'todos') {
+                actualizarPreviewHoodie(btn.dataset.filter);
+            }
             renderProductos(btn.dataset.filter);
         });
     });
@@ -561,7 +608,9 @@ document.addEventListener('DOMContentLoaded', () => {
     activarEventosBase();
     activarMenuMovil();
     activarFiltros();
+    activarPreviewHoodie();
     renderProductos();
+    actualizarPreviewHoodie('negro');
     activarReveal();
     aplicarFallbackImagenes();
     activarHeroSlider();

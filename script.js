@@ -166,7 +166,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra beige con tono neutro y elegancia outdoor para cualquier ocasión.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.54 PM.jpeg'
+        imagen: 'assets/caps/cap-beige.jpeg'
     },
     {
         id: 10,
@@ -177,7 +177,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable verde con identidad Tahial para días outdoor y enfoque deportivo.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.53 PM (2) - Copy.jpeg'
+        imagen: 'assets/caps/cap-green.jpeg'
     },
     {
         id: 11,
@@ -188,7 +188,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable amarilla insignia: máxima visibilidad y presencia de marca.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.55 PM - Copy.jpeg'
+        imagen: 'assets/caps/cap-yellow.jpeg'
     },
     {
         id: 12,
@@ -199,7 +199,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra azul royal con presencia fuerte y energía de expedición.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.56 PM - Copy.jpeg'
+        imagen: 'assets/caps/cap-blue.jpeg'
     },
     {
         id: 25,
@@ -210,7 +210,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra morada con carácter y presencia de marca única.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.57 PM.jpeg'
+        imagen: 'assets/caps/cap-purple.jpeg'
     },
     {
         id: 26,
@@ -221,7 +221,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra rosada vibrante con personalidad fuerte para escalar con estilo.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.58 PM.jpeg'
+        imagen: 'assets/caps/cap-pink.jpeg'
     },
     {
         id: 27,
@@ -232,7 +232,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra gris clásica y versátil para cualquier terreno y cualquier look.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.48.01 PM (1) - Copy.jpeg'
+        imagen: 'assets/caps/cap-gray.jpeg'
     },
     {
         id: 28,
@@ -243,7 +243,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra blanca limpia con máxima lectura del logo Tahial Climbing.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.48.01 PM.jpeg'
+        imagen: 'assets/caps/cap-white.jpeg'
     },
     {
         id: 29,
@@ -254,7 +254,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable en negro con look limpio para muro, calle y viaje.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.48.02 PM.jpeg'
+        imagen: 'assets/caps/cap-black.jpeg'
     },
     {
         id: 30,
@@ -265,7 +265,7 @@ const productos = [
         envio: true,
         descripcion: 'Gorra ajustable roja de alto impacto visual para drops y looks deportivos.',
         tallas: ['Única'],
-        imagen: 'WhatsApp Image 2026-04-19 at 3.47.53 PM (1) - Copy.jpeg'
+        imagen: 'assets/caps/cap-red.jpeg'
     }
 ];
 

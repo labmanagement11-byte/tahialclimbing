@@ -25,11 +25,16 @@
 
             <nav class="nav" id="site-nav">
                 <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#historia" class="nav-link">Historia</a>
                 <a href="#coleccion" class="nav-link">Colección</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#lookbook" class="nav-link">Cordillera</a>
                 <a href="#redes" class="nav-link">Redes</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
+                <div class="language-switcher" aria-label="Selector de idioma">
+                    <button class="language-btn is-active" id="lang-es" type="button">ES</button>
+                    <button class="language-btn" id="lang-en" type="button">EN</button>
+                </div>
                 <button class="cart-button" id="open-cart" aria-label="Abrir carrito">
                     🛒 <span class="cart-count">0</span>
                 </button>
@@ -47,7 +52,7 @@
             <div class="hero-overlay"></div>
             <div class="container hero-content reveal">
                 <p class="eyebrow">TAHIAL CLIMBING · COLOMBIA</p>
-                <h1>Escalada técnica con alma de cordillera colombiana</h1>
+                <h1>Un niño. Un sueño. Una historia que está escalando el mundo 💛</h1>
                 <p class="hero-text">Diseñado para bloque, deportiva y montaña con identidad local, carácter fuerte y enfoque técnico.</p>
                 <div class="hero-actions">
                     <a href="#coleccion" class="btn btn-primary">Ver colección</a>
@@ -57,6 +62,13 @@
         </section>
 
         <section class="highlights">
+            <div class="container reveal">
+                <div class="story-banner">
+                    <p class="eyebrow">FOTOS REALES DE TAHIAL</p>
+                    <h2>Cada prenda nace en la pared</h2>
+                    <p>Estas imágenes no buscan verse perfectas. Buscan mostrar de dónde sale esta marca: entrenamiento, roca, esfuerzo y una historia real que todavía se está escribiendo.</p>
+                </div>
+            </div>
             <div class="container highlights-grid">
                 <article class="highlight-card reveal">
                     <img class="js-gallery-image" src="assets/gallery/tahial-highlight-01.jpeg" alt="Tahial en competencia de escalada 01" loading="lazy" decoding="async">
@@ -75,10 +87,36 @@
                 <article class="highlight-card reveal">
                     <img class="js-gallery-image" src="assets/gallery/tahial-highlight-03.jpeg" alt="Tahial en competencia de escalada 03" loading="lazy" decoding="async">
                     <div class="highlight-content">
-                        <h3>Camisetas en todas las tallas</h3>
-                        <p>Colección oficial en negro, verde, amarillo y rojo con tallas XS, S, M, L, XL y XXL.</p>
+                        <h3>La ropa se prueba donde importa</h3>
+                        <p>Colección oficial pensada para muro, roca y entrenamiento real, con tallas desde niño hasta adulto.</p>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section class="story-section" id="historia">
+            <div class="container story-grid">
+                <div class="story-copy reveal">
+                    <p class="eyebrow">QUIÉN ES TAHIAL</p>
+                    <h2>Un niño colombiano que está convirtiendo la escalada en su camino</h2>
+                    <p>Tahial no es una marca inventada desde un escritorio. Es un niño que entrena, cae, vuelve a intentarlo y sueña con llevar su historia mucho más lejos que el muro donde empezó.</p>
+                    <p>Cada prenda nace cerca de ese proceso: horas de entrenamiento, competencias, viajes, aprendizaje y una familia que empuja el sueño todos los días. Aquí también está mamá, sosteniendo el camino cuando toca seguir incluso en lo difícil.</p>
+                    <div class="story-points">
+                        <span>Edad: una historia que apenas comienza</span>
+                        <span>Sueño: escalar Colombia y el mundo</span>
+                        <span>Proceso: muro, roca, disciplina y constancia</span>
+                        <span>Familia: mamá presente en cada paso 💛</span>
+                    </div>
+                </div>
+                <aside class="story-panel reveal">
+                    <h3>Apoya este sueño</h3>
+                    <p>Comprar una prenda también es acompañar el proceso de Tahial. Si quieres apoyar más directamente, ya dejamos una ruta clara para donación y contacto.</p>
+                    <div class="story-actions">
+                        <a class="btn btn-primary" href="https://wa.me/573005093262?text=Hola%2C%20quiero%20apoyar%20el%20sue%C3%B1o%20de%20Tahial%20con%20una%20donaci%C3%B3n." target="_blank" rel="noopener noreferrer">Apoya este sueño</a>
+                        <a class="btn btn-ghost" href="mailto:tahialclimbing@gmail.com?subject=Apoyo%20para%20Tahial%20Climbing">Donar por correo</a>
+                    </div>
+                    <p class="story-note">Si luego defines Nequi, Bancolombia o Stripe, este bloque ya está listo para conectar ese botón con un pago real.</p>
+                </aside>
             </div>
         </section>
 
@@ -87,7 +125,7 @@
                 <div class="section-head reveal">
                     <p class="eyebrow">COLECCIÓN OFICIAL</p>
                     <h2>Colección oficial Tahialclimbing</h2>
-                    <p>Selecciona la prenda, el color y la talla desde cada bloque. Agrega al carrito directamente sin bajar a una lista aparte.</p>
+                    <p>Selecciona la prenda, el color y la talla desde cada bloque. La idea es simple: llevar puesta una historia real, no solo comprar ropa.</p>
                 </div>
 
                 <div class="hoodie-showcase reveal" id="hoodie-showcase">
@@ -98,60 +136,60 @@
                         <p class="eyebrow">ESCOGE EL COLOR</p>
                         <div class="hoodie-color-selector" aria-label="Seleccionar color del hoodie">
                             <button class="hoodie-color-btn active" type="button" data-hoodie-color="negro" aria-label="Ver hoodie negro">
-                                <img src="assets/gallery/tahial-hoodie-black.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Negro</span>
+                                <span class="color-swatch" data-color="negro" aria-hidden="true"></span>
+                                <span class="color-label">Negro</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="verde" aria-label="Ver hoodie verde">
-                                <img src="assets/gallery/tahial-hoodie-green.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Verde</span>
+                                <span class="color-swatch" data-color="verde" aria-hidden="true"></span>
+                                <span class="color-label">Verde</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="azul" aria-label="Ver hoodie azul">
-                                <img src="assets/gallery/tahial-hoodie-blue.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Azul</span>
+                                <span class="color-swatch" data-color="azul" aria-hidden="true"></span>
+                                <span class="color-label">Azul</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="naranja" aria-label="Ver hoodie naranja">
-                                <img src="assets/gallery/tahial-hoodie-orange.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Naranja</span>
+                                <span class="color-swatch" data-color="naranja" aria-hidden="true"></span>
+                                <span class="color-label">Naranja</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="morado" aria-label="Ver hoodie morado">
-                                <img src="assets/gallery/tahial-hoodie-purple.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Morado</span>
+                                <span class="color-swatch" data-color="morado" aria-hidden="true"></span>
+                                <span class="color-label">Morado</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="amarillo" aria-label="Ver hoodie amarillo">
-                                <img src="assets/gallery/tahial-hoodie-yellow.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Amarillo</span>
+                                <span class="color-swatch" data-color="amarillo" aria-hidden="true"></span>
+                                <span class="color-label">Amarillo</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="rosado" aria-label="Ver hoodie rosado">
-                                <img src="assets/gallery/tahial-hoodie-pink.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Rosado</span>
+                                <span class="color-swatch" data-color="rosado" aria-hidden="true"></span>
+                                <span class="color-label">Rosado</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="gris" aria-label="Ver hoodie gris">
-                                <img src="assets/gallery/tahial-hoodie-gray.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Gris</span>
+                                <span class="color-swatch" data-color="gris" aria-hidden="true"></span>
+                                <span class="color-label">Gris</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="blanco" aria-label="Ver hoodie blanco">
-                                <img src="assets/gallery/tahial-hoodie-white.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Blanco</span>
+                                <span class="color-swatch" data-color="blanco" aria-hidden="true"></span>
+                                <span class="color-label">Blanco</span>
                             </button>
                             <button class="hoodie-color-btn" type="button" data-hoodie-color="rojo" aria-label="Ver hoodie rojo">
-                                <img src="assets/gallery/tahial-hoodie-red.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Rojo</span>
+                                <span class="color-swatch" data-color="rojo" aria-hidden="true"></span>
+                                <span class="color-label">Rojo</span>
                             </button>
                         </div>
                         <div class="hoodie-preview-info">
                             <h3 id="hoodie-preview-title">Hoodie Suesca Black</h3>
-                            <p id="hoodie-preview-desc">Hoodie premium en negro con presencia limpia, fuerte y enfoque de escalada urbana.</p>
+                            <p id="hoodie-preview-desc">Hoodie en negro con energía de entrenamiento real y una historia que sigue creciendo sobre el muro.</p>
                             <div class="hoodie-preview-meta">
                                 <span class="price" id="hoodie-preview-price">$120.000</span>
                                 <span class="envio-badge">✈ envío incluido</span>
                             </div>
                             <div class="purchase-panel">
-                                <p class="purchase-color">Color seleccionado: <strong id="hoodie-selected-color">Negro</strong></p>
+                                <p class="purchase-color"><span class="purchase-color-label">Color seleccionado:</span> <strong id="hoodie-selected-color">Negro</strong></p>
                                 <label class="purchase-label" for="hoodie-size-select">Talla</label>
                                 <select id="hoodie-size-select" class="purchase-select" aria-label="Seleccionar talla del hoodie"></select>
-                                <button class="add-btn purchase-btn" id="hoodie-add-btn" type="button">Agregar hoodie al carrito</button>
+                                <button class="add-btn purchase-btn" id="hoodie-add-btn" type="button">Quiero apoyar este sueño 💛</button>
                             </div>
-                            <p class="hoodie-preview-note">Haz click en una miniatura para cambiar el color del buso principal.</p>
+                            <p class="hoodie-preview-note">Estamos priorizando fotos reales de Tahial usando cada prenda en muro y roca para que la colección se sienta tan auténtica como la historia.</p>
                         </div>
                     </div>
                 </div>
@@ -164,36 +202,36 @@
                         <p class="eyebrow">ESCOGE EL COLOR DE CAMISETA</p>
                         <div class="hoodie-color-selector" aria-label="Seleccionar color de la camiseta">
                             <button class="tshirt-color-btn active" type="button" data-tshirt-color="negro" aria-label="Ver camiseta negra">
-                                <img src="assets/products/tshirt-black.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Negro</span>
+                                <span class="color-swatch" data-color="negro" aria-hidden="true"></span>
+                                <span class="color-label">Negro</span>
                             </button>
                             <button class="tshirt-color-btn" type="button" data-tshirt-color="verde" aria-label="Ver camiseta verde">
-                                <img src="assets/products/tshirt-green.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Verde</span>
+                                <span class="color-swatch" data-color="verde" aria-hidden="true"></span>
+                                <span class="color-label">Verde</span>
                             </button>
                             <button class="tshirt-color-btn" type="button" data-tshirt-color="amarillo" aria-label="Ver camiseta amarilla">
-                                <img src="assets/products/tshirt-yellow.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Amarillo</span>
+                                <span class="color-swatch" data-color="amarillo" aria-hidden="true"></span>
+                                <span class="color-label">Amarillo</span>
                             </button>
                             <button class="tshirt-color-btn" type="button" data-tshirt-color="rojo" aria-label="Ver camiseta roja">
-                                <img src="assets/products/tshirt-red.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Rojo</span>
+                                <span class="color-swatch" data-color="rojo" aria-hidden="true"></span>
+                                <span class="color-label">Rojo</span>
                             </button>
                         </div>
                         <div class="hoodie-preview-info">
                             <h3 id="tshirt-preview-title">Camiseta Suesca Black</h3>
-                            <p id="tshirt-preview-desc">Camiseta técnica negra de uso diario y entrenamiento.</p>
+                            <p id="tshirt-preview-desc">Camiseta pensada para acompañar entrenamientos, viajes y días reales de escalada.</p>
                             <div class="hoodie-preview-meta">
                                 <span class="price" id="tshirt-preview-price">$85.000</span>
                                 <span class="envio-badge">✈ envío incluido</span>
                             </div>
                             <div class="purchase-panel">
-                                <p class="purchase-color">Color seleccionado: <strong id="tshirt-selected-color">Negro</strong></p>
+                                <p class="purchase-color"><span class="purchase-color-label">Color seleccionado:</span> <strong id="tshirt-selected-color">Negro</strong></p>
                                 <label class="purchase-label" for="tshirt-size-select">Talla</label>
                                 <select id="tshirt-size-select" class="purchase-select" aria-label="Seleccionar talla de la camiseta"></select>
-                                <button class="add-btn purchase-btn" id="tshirt-add-btn" type="button">Agregar camiseta al carrito</button>
+                                <button class="add-btn purchase-btn" id="tshirt-add-btn" type="button">Llevar esta historia conmigo</button>
                             </div>
-                            <p class="hoodie-preview-note">Escoge el color y la talla de la camiseta para agregarla desde aqui.</p>
+                            <p class="hoodie-preview-note">La siguiente mejora pendiente es reemplazar los mockups más perfectos por más fotos reales de Tahial, contigo y en muro.</p>
                         </div>
                     </div>
                 </div>
@@ -206,60 +244,60 @@
                         <p class="eyebrow">ESCOGE EL COLOR DE GORRA</p>
                         <div class="hoodie-color-selector" aria-label="Seleccionar color de gorra">
                             <button class="cap-color-btn active" type="button" data-cap-color="beige" aria-label="Ver gorra beige">
-                                <img src="assets/caps/cap-beige.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Beige</span>
+                                <span class="color-swatch" data-color="beige" aria-hidden="true"></span>
+                                <span class="color-label">Beige</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="verde" aria-label="Ver gorra verde">
-                                <img src="assets/caps/cap-green.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Verde</span>
+                                <span class="color-swatch" data-color="verde" aria-hidden="true"></span>
+                                <span class="color-label">Verde</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="amarillo" aria-label="Ver gorra amarilla">
-                                <img src="assets/caps/cap-yellow.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Amarillo</span>
+                                <span class="color-swatch" data-color="amarillo" aria-hidden="true"></span>
+                                <span class="color-label">Amarillo</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="azul" aria-label="Ver gorra azul">
-                                <img src="assets/caps/cap-blue.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Azul</span>
+                                <span class="color-swatch" data-color="azul" aria-hidden="true"></span>
+                                <span class="color-label">Azul</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="morado" aria-label="Ver gorra morada">
-                                <img src="assets/caps/cap-purple.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Morado</span>
+                                <span class="color-swatch" data-color="morado" aria-hidden="true"></span>
+                                <span class="color-label">Morado</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="rosado" aria-label="Ver gorra rosada">
-                                <img src="assets/caps/cap-pink.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Rosado</span>
+                                <span class="color-swatch" data-color="rosado" aria-hidden="true"></span>
+                                <span class="color-label">Rosado</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="gris" aria-label="Ver gorra gris">
-                                <img src="assets/caps/cap-gray.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Gris</span>
+                                <span class="color-swatch" data-color="gris" aria-hidden="true"></span>
+                                <span class="color-label">Gris</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="blanco" aria-label="Ver gorra blanca">
-                                <img src="assets/caps/cap-white.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Blanco</span>
+                                <span class="color-swatch" data-color="blanco" aria-hidden="true"></span>
+                                <span class="color-label">Blanco</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="negro" aria-label="Ver gorra negra">
-                                <img src="assets/caps/cap-black.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Negro</span>
+                                <span class="color-swatch" data-color="negro" aria-hidden="true"></span>
+                                <span class="color-label">Negro</span>
                             </button>
                             <button class="cap-color-btn" type="button" data-cap-color="rojo" aria-label="Ver gorra roja">
-                                <img src="assets/caps/cap-red.jpeg" alt="" class="hoodie-color-thumb">
-                                <span>Rojo</span>
+                                <span class="color-swatch" data-color="rojo" aria-hidden="true"></span>
+                                <span class="color-label">Rojo</span>
                             </button>
                         </div>
                         <div class="hoodie-preview-info">
-                            <h3 id="cap-preview-title">Gorra Arena Beige</h3>
-                            <p id="cap-preview-desc">Gorra beige con tono neutro y elegancia outdoor para cualquier ocasión.</p>
+                            <h3 id="cap-preview-title">Gorra Sueño Arena</h3>
+                            <p id="cap-preview-desc">Gorra beige para acompañar entrenamientos, viajes y días de pared con una lectura limpia de la marca.</p>
                             <div class="hoodie-preview-meta">
                                 <span class="price" id="cap-preview-price">$79.000</span>
                                 <span class="envio-badge">✈ envío incluido</span>
                             </div>
                             <div class="purchase-panel">
-                                <p class="purchase-color">Color seleccionado: <strong id="cap-selected-color">Beige</strong></p>
+                                <p class="purchase-color"><span class="purchase-color-label">Color seleccionado:</span> <strong id="cap-selected-color">Beige</strong></p>
                                 <label class="purchase-label" for="cap-size-select">Talla</label>
                                 <select id="cap-size-select" class="purchase-select" aria-label="Seleccionar talla de la gorra"></select>
-                                <button class="add-btn purchase-btn" id="cap-add-btn" type="button">Agregar gorra al carrito</button>
+                                <button class="add-btn purchase-btn" id="cap-add-btn" type="button">Quiero apoyar este sueño 💛</button>
                             </div>
-                            <p class="hoodie-preview-note">Haz click en una miniatura para cambiar el color de la gorra.</p>
+                            <p class="hoodie-preview-note">Ahora las gorras hablan más desde la emoción: cada color tiene nombre propio y una pequeña historia.</p>
                         </div>
                     </div>
                 </div>
@@ -270,43 +308,43 @@
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">CAMPAÑA EN MOVIMIENTO</p>
-                    <h2>Videos promocionales de la colección</h2>
-                    <p>Contenido corto para mostrar color, presencia de marca y energía visual en formato social y promocional.</p>
+                    <h2>Videos para contar el proceso, no solo promocionar la ropa</h2>
+                    <p>Este bloque ya apunta a storytelling real: entrenamientos, caídas, esfuerzo, risas y momentos que expliquen por qué esta historia merece apoyo.</p>
                 </div>
                 <div class="video-grid">
                     <article class="video-card reveal">
                         <video src="assets/videos/promo-hoodie-black.mp4" autoplay muted loop controls preload="none"></video>
                         <div class="video-meta">
-                            <h3>Promo Hoodie Negro</h3>
-                            <p>Presentación de color clásico con lectura premium y fondo limpio.</p>
+                            <h3>Entrenar también es empezar de nuevo</h3>
+                            <p>Ideal para mostrar repeticiones, foco y disciplina en un día real de entrenamiento.</p>
                         </div>
                     </article>
                     <article class="video-card reveal">
                         <video src="assets/videos/promo-hoodie-green.mp4" autoplay muted loop controls preload="none"></video>
                         <div class="video-meta">
-                            <h3>Promo Hoodie Verde</h3>
-                            <p>Versión de alto contraste para una línea más fresca y outdoor.</p>
+                            <h3>Roca, muro y esfuerzo visible</h3>
+                            <p>Espacio para secuencias que muestren caída, intento y regreso a la pared.</p>
                         </div>
                     </article>
                     <article class="video-card reveal">
                         <video src="assets/videos/promo-hoodie-yellow.mp4" autoplay muted loop controls preload="none"></video>
                         <div class="video-meta">
-                            <h3>Promo Hoodie Amarillo</h3>
-                            <p>Drop de mayor impacto visual para campañas, reels y pauta de marca.</p>
+                            <h3>El color del sueño en movimiento</h3>
+                            <p>Funciona mejor si mezcla logro, risas y momentos humanos, no solo planos de producto.</p>
                         </div>
                     </article>
                     <article class="video-card reveal">
                         <video src="assets/videos/promo-caps-01.mp4" autoplay muted loop controls preload="none"></video>
                         <div class="video-meta">
-                            <h3>Promo Gorras 01</h3>
-                            <p>Clip promocional de gorras Tahial para contenido social y branding de colección.</p>
+                            <h3>Detrás de la sesión</h3>
+                            <p>Buen lugar para enseñar preparación, descanso y el ambiente real alrededor del entrenamiento.</p>
                         </div>
                     </article>
                     <article class="video-card reveal">
                         <video src="assets/videos/promo-caps-02.mp4" autoplay muted loop controls preload="none"></video>
                         <div class="video-meta">
-                            <h3>Promo Gorras 02</h3>
-                            <p>Segundo corte de campaña para reforzar color, ajuste y presencia en escalada urbana.</p>
+                            <h3>Una historia que vale compartir</h3>
+                            <p>Usa este clip para cerrar con emoción: familia, progreso y comunidad alrededor de Tahial.</p>
                         </div>
                     </article>
                 </div>
@@ -317,8 +355,8 @@
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">CORDILLERA VISUAL</p>
-                    <h2>Galería Tahial · solo fotos oficiales</h2>
-                    <p>Se agregó una selección más amplia con fotos de roca, muro, premiación y colección oficial para que la marca tenga más presencia visual en la página.</p>
+                    <h2>Galería Tahial · emoción, autenticidad y credibilidad</h2>
+                    <p>Estas fotos son la prueba social más fuerte del sitio. Muestran pared, competencia, premiación y proceso real: justo lo que más ayuda a vender y a compartir.</p>
                 </div>
                 <div class="lookbook-grid">
                     <figure class="lookbook-item tall reveal">
@@ -435,7 +473,7 @@
                 <div>
                     <p class="eyebrow">CONTACTO</p>
                     <h2>Activa tu pedido Cordada Tahial</h2>
-                    <p>Asesoría personalizada para tallas, disponibilidad y envíos en Colombia.</p>
+                    <p>Asesoría personalizada para tallas, disponibilidad, apoyo directo y envíos en Colombia o desde el exterior.</p>
                     <ul class="contact-list">
                         <li>📞 <a class="contact-link" href="https://wa.me/573005093262" target="_blank" rel="noopener noreferrer">+57 300 509 3262 (WhatsApp)</a></li>
                         <li>📧 <a class="contact-link" href="mailto:tahialclimbing@gmail.com">tahialclimbing@gmail.com</a></li>
@@ -462,7 +500,7 @@
                 <p class="empty-cart">Tu carrito está vacío.</p>
             </div>
             <div class="modal-footer">
-                <strong>Total: $<span id="total-precio">0</span></strong>
+                <strong><span id="total-label">Total:</span> $<span id="total-precio">0</span></strong>
                 <button class="btn btn-primary" id="checkout-btn">Procesar pedido</button>
             </div>
         </div>
